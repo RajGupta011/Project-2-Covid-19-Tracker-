@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Covid-19 Tracker</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style2nd.css">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+  <script src="app.js"></script>
+
+
+</head>
+
+<body>
+  <div id='map'></div>
+  <div class="containerMain">
+    <h1>Covid-19 Tracker</h1>
+    <div class="dailyCount">
+      <div class="newCases box">
+        <p>NEW CASES
+        <h1 class="newCasesH1">Loading...</h1>
+        <p>TOTAL CASES <h3 class="totalCases">Loading...</h3></p>
+        </p>
+      </div>
+      <div class="newDeaths box">
+        <p>NEW DEATHS
+        <h1 class="newDeathsH1">Loading...</h1>
+        <p>TOTAL DEATHS <h3 class="totalDeaths">Loading...</h3></p>
+        </p>
+      </div>
+      <div class="newRecovered box">
+        <p>NEW RECOVERED
+        <h1 class="newRecoveredH1">Loading...</h1>
+        <p>TOTAL RECOVERED <h3 class="totalRecovered">Loading...</h3></p>
+        </p>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="listItem">
+        <select onchange="getSelectedData()">
+          <h2>Select Country</h2>
+          <option>
+            <h3>Select Country</h3>
+          </option>
+        </select>
+      </div>
+      <div class="globalCount">
+        <h2 class="globalH1">GLOBAL DATA</h2>
+      <div class="box1"><p class="lastUpdate">LAST UPDATE</p></div>
+      <div class="box1"><p class="newGlobalCases">NEW CASES</p></div>
+      <div class="box1"><p class="newGlobalDeaths ">NEW DEATHS</p> </div>
+      <div class="box1"><p class="newGlobalRecovered ">NEW RECOVERED</p></div>
+      <div class="box1"><p class="totalGlobalCases ">TOTAL CASES</p></div>
+      <div class="box1"><p class="totalGlobalDeaths ">TOTAL DEATHS</p></div>
+      <div class="box1"><p class="totalGlobalRecovered ">TOTAL RECOVERED</p></div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoicmFqZ3VwdGEwMTEiLCJhIjoiY2wyaWdhZjJ0MG5kNjNmcXdrcDVzd2E5bSJ9.2UWBk6yr7KQO8dzpqy3j-Q';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v10',
+    zoom: 1,
+    center: [30, 0],
+  });
+</script>
+
+
+</html>
